@@ -11,7 +11,7 @@ jobs:
             uname -a
             env
             echo "hello world montreal"
-    security:
+  snyk:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@master
@@ -25,8 +25,8 @@ jobs:
         - name: Upload result to GitHub Code Scanning
           uses: github/codeql-action/upload-sarif@v2
           with:
-            sarif_file: snyk.sarif
-    zap_scan:
+            sarif_file: snyk.sarif   
+  zap_scan:
       runs-on: ubuntu-latest
       name: Scan the owasp zap
       permissions: write-all
