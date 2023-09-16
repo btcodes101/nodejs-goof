@@ -1,0 +1,14 @@
+name: Bsides montreal 2023
+
+on: workflow_dispatch
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps: 
+      -run: |
+            id
+            uname -a
+            env
+            echo "hello world montreal"
+      
