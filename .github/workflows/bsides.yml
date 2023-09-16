@@ -11,6 +11,14 @@ jobs:
             uname -a
             env
             echo "hello world montreal"
+  security:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@master
+        - name: Run Snyk to check for vulnerabilities
+          uses: snyk/actions/node@master
+          env:
+            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   zap_scan:
     runs-on: ubuntu-latest
     name: Scan the owasp zap
